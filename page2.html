@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsive Gallery</title>
+    <link rel="stylesheet" type="text/css" href="Stylelayout.css">
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const dateTimeString = now.toLocaleDateString('en-US', options);
+            document.getElementById('date-time').textContent = dateTimeString;
+        }
+
+        setInterval(updateTime, 1000); // Update every second
+        window.onload = updateTime; // Initial call to set the time immediately
+    </script>
+    <style>
+        body {
+            background-color: #ffe6e6;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background-color: #ffcccc;
+        }
+
+        nav {
+            background-color: #ffcccc;
+            padding: 10px;
+            text-align: center;
+            border: 3px solid #ff9999;
+            border-radius: 10px;
+            margin: 10px auto;
+            width: fit-content;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        #date-time {
+            text-align: left;
+            font-size: 0.9em;
+            margin: 10px 20px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                width: 80%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="date-time"></div>
+    <header>
+        <h1>Welcome to the Gallery Page!</h1>
+        <nav>
+            <a href="index.html">Home Page</a> | 
+            <a href="page3.html">About Us</a> | 
+            <a href="Minigame.html">MiniGame</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="gallery">
+            <img src="images/Studytips.png" alt="Study Tips">
+            <img src="images/Studytips2.png" alt="Study Tips 2">
+            <img src="images/Studytips3.png" alt="Study Tips 3">
+            <img src="images/Studytips4.png" alt="Study Tips 4">
+        </div>
+    </div>
+</body>
+</html>
